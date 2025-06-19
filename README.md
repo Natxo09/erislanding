@@ -1,36 +1,129 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Eris Landing Page 🪐
+
+<div align="center">
+  <img src="public/iconnobg.png" width="128" height="128" alt="Eris Icon">
+  
+  **Landing page for Eris - Private AI Chat for iPhone and iPad**
+  
+  [![Next.js](https://img.shields.io/badge/Next.js-15.3-black.svg)](https://nextjs.org/)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38B2AC.svg)](https://tailwindcss.com/)
+</div>
+
+## About
+
+This is the landing page for [Eris](https://github.com/Natxo09/Eris.), a private AI chat application that runs entirely on-device using Apple's MLX framework. The landing page showcases the app's features, available models, and privacy-first approach.
+
+## Features
+
+- 🌑 **Dark Minimalist Design** - Clean, modern interface with monochromatic theme
+- ⚡ **Lightning Fast** - Built with Next.js 15 and optimized for performance
+- 📱 **Fully Responsive** - Looks great on all devices
+- 🎨 **Smooth Animations** - Subtle animations with Framer Motion
+- 🔗 **GitHub Integration** - Live star count from the main repository
+- 📄 **Legal Pages** - Privacy Policy and Terms of Use included
+
+## Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **Icons**: Lucide React
+- **Animations**: Framer Motion
+- **Font**: Geist (Next.js default)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Natxo09/ErisLanding.git
+cd ErisLanding
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Learn More
+### Building for Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── app/
+│   ├── page.tsx          # Home page
+│   ├── layout.tsx        # Root layout
+│   ├── globals.css       # Global styles
+│   ├── privacy/         # Privacy policy page
+│   └── terms/           # Terms of use page
+└── components/
+    ├── Header.tsx        # Navigation header
+    ├── Hero.tsx          # Hero section
+    ├── Features.tsx      # Features grid
+    ├── Models.tsx        # AI models showcase
+    ├── Privacy.tsx       # Privacy section
+    ├── Download.tsx      # Download CTA
+    └── Footer.tsx        # Footer with links
+```
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The site can be deployed to any platform that supports Next.js:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Vercel** (recommended): Simply connect your GitHub repo
+- **Netlify**: Use the Next.js build plugin
+- **Self-hosted**: Build and run with Node.js
+
+## Related Projects
+
+- [Eris iOS App](https://github.com/Natxo09/Eris.) - The main iOS application
+- [MLX](https://github.com/ml-explore/mlx) - Apple's machine learning framework
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Credits
+
+- Created by Ignacio Palacio - [natxo.dev](https://natxo.dev)
+- Inspired by privacy-first AI applications
+- Built with amazing open-source tools
+
+---
+
+### Note About the iOS App
+
+This is just the landing page. For the actual iOS app that runs AI models on-device, check out the [main Eris repository](https://github.com/Natxo09/Eris.).
+
+The app features:
+- 100% on-device AI processing
+- Support for 12+ language models
+- Complete offline functionality
+- No data collection or tracking
+- Open source transparency
+
+Download on the App Store (coming soon) or build from source!
