@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  erislanding:
+    build: .
+    container_name: erislanding
+    restart: unless-stopped
+    networks:
+      - default
+
+networks:
+  default:
+    external: true
+    name: nginx-proxy-manager_default
