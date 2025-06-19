@@ -126,7 +126,8 @@ export default function Models() {
               <div className="space-y-4">
                 {category.models.map((model, index) => {
                   // Get the first size's link as default
-                  const defaultLink = model.hfLinks[model.sizes[0]];
+                  const firstSize = model.sizes[0];
+                  const defaultLink = model.hfLinks[firstSize as keyof typeof model.hfLinks];
                   
                   return (
                     <motion.a
