@@ -13,7 +13,7 @@ const roadmapItems = [
       {
         title: "Chat name persistence",
         description: "Chat name only applies after exiting and re-entering the chat",
-        status: "planned"
+        status: "completed"
       },
       {
         title: "Markdown formatting",
