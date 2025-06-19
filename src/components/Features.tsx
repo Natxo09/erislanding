@@ -8,7 +8,10 @@ import {
   Zap, 
   DollarSign, 
   Moon,
-  Brain
+  Sun,
+  Brain,
+  Code2,
+  FileText
 } from "lucide-react";
 
 const features = [
@@ -33,6 +36,16 @@ const features = [
     description: "Choose from Llama, Qwen, DeepSeek, and more specialized models."
   },
   {
+    icon: Code2,
+    title: "Syntax Highlighting",
+    description: "Beautiful code blocks with syntax highlighting for 100+ languages."
+  },
+  {
+    icon: FileText,
+    title: "Markdown Support",
+    description: "Full markdown rendering for formatted text, lists, tables, and more."
+  },
+  {
     icon: DollarSign,
     title: "No Subscription",
     description: "Download once, use forever. No monthly fees or hidden costs."
@@ -41,6 +54,11 @@ const features = [
     icon: Moon,
     title: "Dark Mode",
     description: "Beautiful dark interface that's easy on your eyes, day or night."
+  },
+  {
+    icon: Sun,
+    title: "Light Mode",
+    description: "Clean and bright interface for comfortable daytime use."
   }
 ];
 
@@ -75,10 +93,10 @@ export default function Features() {
               className="group relative"
             >
               <div className="absolute inset-0 bg-white/5 rounded-2xl blur-xl group-hover:bg-white/10 transition-colors" />
-              <div className="relative bg-surface border border-border rounded-2xl p-8 hover:border-white/20 transition-colors">
+              <div className="relative bg-surface border border-border rounded-2xl p-8 hover:border-white/20 transition-colors h-full flex flex-col">
                 <feature.icon className="w-12 h-12 text-white mb-4" />
                 <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-muted">{feature.description}</p>
+                <p className="text-muted flex-grow">{feature.description}</p>
               </div>
             </motion.div>
           ))}

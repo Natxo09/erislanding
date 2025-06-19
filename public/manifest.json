@@ -1,0 +1,23 @@
+{
+  "name": "Eris - Private AI Chat",
+  "short_name": "Eris",
+  "description": "Chat with AI privately on your device. No cloud, no tracking.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/iconnobg.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

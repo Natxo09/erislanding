@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Shield, Wifi, Zap } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
   const badges = [
@@ -71,35 +71,25 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* iPhone Mockup */}
+          {/* Video */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="relative mx-auto max-w-[300px] lg:max-w-[400px]">
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-white/10 blur-3xl rounded-full" />
-              
-              {/* iPhone Frame */}
-              <div className="relative bg-surface rounded-[3rem] p-3 border border-border">
-                <div className="bg-black rounded-[2.5rem] p-2">
-                  {/* Notch */}
-                  <div className="absolute top-6 left-1/2 -translate-x-1/2 w-40 h-7 bg-black rounded-full z-10" />
-                  
-                  {/* Screen */}
-                  <div className="relative aspect-[9/19.5] rounded-[2.3rem] overflow-hidden bg-background">
-                    <Image
-                      src="/app-screenshot.png"
-                      alt="Eris App Screenshot"
-                      fill
-                      className="object-cover"
-                      priority
-                    />
-                  </div>
-                </div>
-              </div>
+            <div className="relative mx-auto max-w-[350px] lg:max-w-[450px]">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-auto rounded-2xl"
+              >
+                <source src="/video1.mp4" type="video/mp4" />
+                <source src="/video1.webm" type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </motion.div>
         </div>

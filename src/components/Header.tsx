@@ -28,9 +28,10 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { href: "#features", label: "Features" },
-    { href: "#privacy", label: "Privacy" },
-    { href: "#models", label: "Models" },
+    { href: "/#features", label: "Features" },
+    { href: "/#privacy", label: "Privacy" },
+    { href: "/#models", label: "Models" },
+    { href: "/roadmap", label: "Roadmap" },
   ];
 
   return (
@@ -51,7 +52,8 @@ export default function Header() {
             alt="Eris Logo"
             width={48}
             height={48}
-            className="rounded-lg"
+            className="rounded-lg select-none"
+            draggable={false}
           />
           <span className="text-2xl font-bold">Eris.</span>
         </Link>

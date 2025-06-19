@@ -9,10 +9,11 @@ export default function Footer() {
 
   const links = {
     product: [
-      { label: "Features", href: "#features" },
-      { label: "Models", href: "#models" },
-      { label: "Privacy", href: "#privacy" },
-      { label: "Download", href: "#download" }
+      { label: "Features", href: "/#features" },
+      { label: "Models", href: "/#models" },
+      { label: "Privacy", href: "/#privacy" },
+      { label: "Download", href: "/#download" },
+      { label: "Roadmap", href: "/roadmap" }
     ],
     legal: [
       { label: "Privacy Policy", href: "/privacy" },
@@ -37,7 +38,8 @@ export default function Footer() {
                 alt="Eris Logo"
                 width={32}
                 height={32}
-                className="rounded-lg"
+                className="rounded-lg select-none"
+                draggable={false}
               />
               <span className="text-xl font-bold">Eris.</span>
             </div>
