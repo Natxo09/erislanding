@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Shield, Wifi, Zap } from "lucide-react";
+import { Shield, Wifi, Zap, Github, Star } from "lucide-react";
 import Image from "next/image";
 
 export default function Hero() {
@@ -53,6 +53,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
+              className="flex flex-wrap gap-4"
             >
               <a
                 href="https://apps.apple.com"
@@ -67,6 +68,17 @@ export default function Hero() {
                   height={20}
                 />
                 <span className="font-medium">Download on App Store</span>
+              </a>
+              
+              <a
+                href="https://github.com/Natxo09/Eris."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-surface border border-border px-6 py-3 rounded-lg hover:bg-surface/80 transition-colors"
+              >
+                <Github size={20} />
+                <span className="font-medium">Star on GitHub</span>
+                <Star size={16} className="text-muted" />
               </a>
             </motion.div>
           </motion.div>
