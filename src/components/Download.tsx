@@ -40,7 +40,7 @@ export default function Download() {
               className="mb-16"
             >
               <a
-                href="https://apps.apple.com"
+                href="https://apps.apple.com/es/app/eris/id6747496749"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 bg-white text-black px-8 py-4 rounded-xl hover:opacity-90 transition-opacity"

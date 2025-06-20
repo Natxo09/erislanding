@@ -5,12 +5,12 @@ import Models from "@/components/Models";
 import Privacy from "@/components/Privacy";
 import Download from "@/components/Download";
 import Footer from "@/components/Footer";
-import DisclaimerBanner from "@/components/DisclaimerBanner";
+// import DisclaimerBanner from "@/components/DisclaimerBanner";
 
 export default function Home() {
   return (
     <>
-      <DisclaimerBanner />
+      {/* <DisclaimerBanner /> */}
       <Header />
       <main>
         <Hero />

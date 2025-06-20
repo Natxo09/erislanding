@@ -56,7 +56,7 @@ export default function Hero() {
               className="flex flex-wrap gap-4"
             >
               <a
-                href="https://apps.apple.com"
+                href="https://apps.apple.com/es/app/eris/id6747496749"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-foreground text-background px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"

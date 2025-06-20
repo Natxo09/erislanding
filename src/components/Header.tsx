@@ -92,7 +92,7 @@ export default function Header() {
             
             {/* App Store Button */}
             <a
-              href="https://apps.apple.com"
+              href="https://apps.apple.com/es/app/eris/id6747496749"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-foreground text-background px-5 py-2.5 rounded-lg hover:opacity-90 transition-opacity"
@@ -155,7 +155,7 @@ export default function Header() {
                 </a>
                 
                 <a
-                  href="https://apps.apple.com"
+                  href="https://apps.apple.com/es/app/eris/id6747496749"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-foreground text-background px-5 py-2.5 rounded-lg hover:opacity-90 transition-opacity"
