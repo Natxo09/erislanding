@@ -82,8 +82,8 @@ const changelogData: ChangelogEntry[] = [
   },
   {
     version: "1.4.0",
-    date: "2025-06-21",
-    status: "released",
+    date: "Pending App Store Review",
+    status: "pending",
     categories: {
       added: [
         "Dynamic GPU cache limits based on device capabilities",
