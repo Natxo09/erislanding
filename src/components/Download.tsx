@@ -113,7 +113,7 @@ export default function Download() {
             {/* Requirements - minimal */}
             <div className="text-center mt-12">
               <p className="text-sm text-muted">
-                iPhone XS or newer · iOS 17.6+ · 2-8GB per model
+                iPhone 11 Pro or newer (min. 6GB RAM) · iOS 17.6+ · 2-8GB per model
               </p>
             </div>
           </motion.div>
