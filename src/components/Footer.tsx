@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Github, Mail, Globe } from "lucide-react";
+import DiscordIcon from "./icons/DiscordIcon";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -21,6 +22,7 @@ export default function Footer() {
     ],
     developer: [
       { label: "GitHub", href: "https://github.com/Natxo09/Eris.", icon: Github },
+      { label: "Discord", href: "https://discord.gg/nr2qpfzCsd", icon: DiscordIcon },
       { label: "Portfolio", href: "https://natxo.dev", icon: Globe },
       { label: "Contact", href: "mailto:contact@northernbytes.dev", icon: Mail }
     ]

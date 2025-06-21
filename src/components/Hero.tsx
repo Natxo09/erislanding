@@ -53,32 +53,49 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="flex flex-wrap gap-4"
+              className="space-y-4"
             >
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="https://apps.apple.com/es/app/eris/id6747496749"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-foreground text-background px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
+                >
+                  <Image
+                    src="/apple-logo.svg"
+                    alt="Apple"
+                    width={20}
+                    height={20}
+                  />
+                  <span className="font-medium">Download on App Store</span>
+                </a>
+                
+                <a
+                  href="https://github.com/Natxo09/Eris."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-surface border border-border px-6 py-3 rounded-lg hover:bg-surface/80 transition-colors"
+                >
+                  <Github size={20} />
+                  <span className="font-medium">Star on GitHub</span>
+                  <Star size={16} className="text-muted" />
+                </a>
+              </div>
+              
               <a
-                href="https://apps.apple.com/es/app/eris/id6747496749"
+                href="https://discord.gg/nr2qpfzCsd"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-foreground text-background px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
+                className="inline-flex items-center gap-2 bg-surface border border-border px-6 py-3 rounded-lg hover:bg-surface/80 transition-colors w-fit"
               >
                 <Image
-                  src="/apple-logo.svg"
-                  alt="Apple"
+                  src="/discord-logo.svg"
+                  alt="Discord"
                   width={20}
                   height={20}
                 />
-                <span className="font-medium">Download on App Store</span>
-              </a>
-              
-              <a
-                href="https://github.com/Natxo09/Eris."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-surface border border-border px-6 py-3 rounded-lg hover:bg-surface/80 transition-colors"
-              >
-                <Github size={20} />
-                <span className="font-medium">Star on GitHub</span>
-                <Star size={16} className="text-muted" />
+                <span className="font-medium">Join our Discord Community</span>
               </a>
             </motion.div>
           </motion.div>
