@@ -40,27 +40,43 @@ const changelogData: ChangelogEntry[] = [
     status: "pending",
     categories: {
       added: [
-        "Device Model Display: Shows specific device model (e.g. 'iPhone 15 Pro')",
-        "Report Bug or Request Feature Section with GitHub Issues and Discord links",
-        "Developer Mode toggle in Preferences",
-        "Network Monitoring with WiFi/cellular detection",
-        "Download improvements with retry logic and better progress tracking"
+        "Device Model Display: Shows specific device model (e.g. 'iPhone 15 Pro') instead of generic 'iPhone'",
+        "Report Bug or Request Feature Section with GitHub Issues link for bug reports",
+        "Discord Community link for getting help and suggesting features",
+        "Developer Mode toggle below Haptic Feedback in Preferences",
+        "NetworkMonitor to detect WiFi vs cellular connections",
+        "Retry logic with exponential backoff for download failures",
+        "Clear error messages explaining MLX framework limitation on cellular",
+        "Device model name mapping for all iPhone and iPad models",
+        "ChipFamily raw values for proper device comparison"
       ],
       changed: [
-        "Dynamic version from bundle instead of hardcoded '1.0.0'",
-        "Reduced MLX cache limit to 20MB during downloads",
-        "Major refactoring: AIModels.swift as single source of truth",
-        "Model categories (General, Reasoning, Code) with proper organization",
-        "Device-specific compatibility checking with RAM requirements"
+        "Replace hardcoded version '1.0.0' with dynamic version from bundle",
+        "Reduce MLX cache limit to 20MB during downloads for better stability",
+        "UI to inform users that WiFi is required only for initial download",
+        "Major refactoring: Create AIModels.swift as single source of truth for all model configurations",
+        "Add model categories (General, Reasoning, Code) with proper organization",
+        "Implement device-specific compatibility checking with RAM requirements",
+        "Move download state management to ModelManager for persistence across views",
+        "Improve UI/UX in model management with clearer information display",
+        "Update all views to use centralized AIModelsRegistry"
       ],
       fixed: [
         "State conflict between Developer Mode toggle and About Developer button",
-        "Download progress tracking when navigating between views"
+        "Download progress tracking when navigating between views",
+        "Show/hide Developer section based on toggle state",
+        "Prevent multiple simultaneous downloads with proper state management"
       ],
       removed: [
         "Redundant GitHub and Discord links from Information section",
         "DEBUG conditional compilation for developer features",
         "Obsolete ModelConfiguration+Extensions.swift"
+      ],
+      performance: [
+        "Reduced code duplication across the codebase",
+        "Improved maintainability with centralized model management",
+        "Better user experience with more detailed model information",
+        "More reliable download state management across views"
       ]
     }
   },
@@ -70,17 +86,17 @@ const changelogData: ChangelogEntry[] = [
     status: "released",
     categories: {
       added: [
-        "Model Compatibility System with visual indicators",
-        "Dynamic GPU Cache Limits based on device capabilities",
-        "Model Download Warnings before downloading risky models",
-        "Improved Error Messages for Metal compilation failures"
+        "Dynamic GPU cache limits based on device capabilities",
+        "Model compatibility system with visual indicators",
+        "Warnings before downloading risky models",
+        "Improved error messages for Metal compilation failures"
       ],
       changed: [
         "Sort models by device compatibility in UI",
-        "Updated documentation to reflect actual device requirements"
+        "Update documentation to reflect actual device requirements"
       ],
       removed: [
-        "iPhone 11 base model support (4GB RAM causes crashes)",
+        "iPhone 11 base model support (only 4GB RAM causes crashes)",
         "Note: iPhone 11 Pro/Pro Max (6GB RAM) and SE 2nd gen remain supported"
       ]
     }
@@ -91,22 +107,38 @@ const changelogData: ChangelogEntry[] = [
     status: "released",
     categories: {
       added: [
-        "Stop Generation Button with thread-safe cancellation",
+        "Stop Generation Button to cancel text generation mid-stream",
+        "Thread-safe CancellationToken class for cross-actor cancellation",
         "Scroll-to-Bottom floating button with smooth animations",
-        "Automatic memory management with MemoryManager",
-        "Loading spinner when model is being loaded",
-        "30+ new languages for syntax highlighting including Dart, Julia, Vue.js, Solidity"
+        "Memory warning handler to clear caches and reduce GPU memory",
+        "Initialize MemoryManager on app startup for automatic memory handling",
+        "Loading spinner when model is being loaded into memory",
+        "Regex caching for syntax highlighting with NSCache",
+        "Haptic feedback when pressing stop button",
+        "Languages: Dart, Lua, Elixir, Clojure, Zig, Nim, Julia",
+        "Enterprise languages: Groovy/Gradle, PowerShell, Visual Basic .NET",
+        "Scientific languages: Fortran, MATLAB, R",
+        "Legacy: Pascal/Delphi",
+        "Web frameworks: Vue.js, React/JSX/TSX, Svelte, Angular",
+        "Markup/Config: HTML, CSS, YAML, JSON, Markdown",
+        "DevOps: Dockerfile, Terraform, GraphQL",
+        "Mobile: Objective-C, Kotlin",
+        "Blockchain: Solidity"
       ],
       changed: [
         "Reordered parser conditions to check lists before bold text",
-        "ProcessInlineMarkdown function for better list formatting"
+        "Added processInlineMarkdown function to handle bold, italic and code formatting within list items",
+        "Stop button color from blue to red for better visibility",
+        "Improve auto-scroll behavior for new messages",
+        "Differentiate between model loading and text generation states"
       ],
       fixed: [
-        "Lists with inline markdown now render correctly (e.g. '- **Title**: Content')"
+        "Now correctly renders lists with inline markdown like '- **Title**: Content'",
+        "Prevent stop action during model loading phase"
       ],
       performance: [
         "Reduced regex compilation overhead in code blocks",
-        "Optimized code syntax highlighting with cached regex patterns",
+        "Optimize code syntax highlighting with cached regex patterns",
         "Better memory management under pressure",
         "More responsive UI with optimized scroll handling"
       ]
