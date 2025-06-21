@@ -2,8 +2,9 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import { useRef } from "react";
 import { 
   Sparkles, 
   Zap, 
@@ -162,6 +163,14 @@ const getCategoryColor = (category: string) => {
 };
 
 export default function ChangelogPage() {
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ["start 20%", "end 80%"]
+  });
+
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Header />
@@ -183,27 +192,46 @@ export default function ChangelogPage() {
             </p>
           </motion.div>
 
-          <div className="space-y-12">
-            {changelogData.map((entry, index) => (
-              <motion.div
-                key={entry.version}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative"
-              >
+          <div className="relative" ref={timelineRef}>
+            {/* Timeline bar background */}
+            <div className="absolute left-3 top-0 bottom-0 w-px bg-border/30" />
+            
+            {/* Timeline bar progress */}
+            <motion.div 
+              className="absolute left-3 top-0 w-px bg-white/60"
+              style={{ height: lineHeight }}
+            />
+            
+            <div className="space-y-12">
+              {changelogData.map((entry, index) => (
+                <motion.div
+                  key={entry.version}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="relative pl-12"
+                >
+                  {/* Timeline dot */}
+                  <div className={`absolute left-3 w-4 h-4 rounded-full border-2 border-background -translate-x-1/2 ${
+                    entry.status === "pending" ? "bg-yellow-400" : "bg-green-500"
+                  }`} />
                 {/* Version Header */}
-                <div className="flex items-start justify-between mb-6">
-                  <div className="flex items-center gap-4">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
                     <h2 className="text-3xl font-bold">v{entry.version}</h2>
-                    {entry.status === "pending" && (
-                      <span className="px-3 py-1 text-sm font-medium bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 rounded-full flex items-center gap-2">
+                    {entry.status === "pending" ? (
+                      <span className="px-3 py-1 text-sm font-medium bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 rounded-full flex items-center gap-2 w-fit">
                         <Clock className="w-4 h-4" />
-                        Pending Review
+                        <span className="hidden sm:inline">Pending Review</span>
+                        <span className="sm:hidden">Pending</span>
+                      </span>
+                    ) : (
+                      <span className="px-3 py-1 text-sm font-medium bg-green-500/10 text-green-400 border border-green-500/20 rounded-full w-fit">
+                        Released
                       </span>
                     )}
                   </div>
-                  <span className="text-muted">{entry.date}</span>
+                  <span className="text-muted text-sm sm:text-base">{entry.date}</span>
                 </div>
 
                 {/* Categories */}
@@ -232,12 +260,9 @@ export default function ChangelogPage() {
                   ))}
                 </div>
 
-                {/* Divider */}
-                {index < changelogData.length - 1 && (
-                  <div className="mt-12 border-b border-border" />
-                )}
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
 
           {/* Call to Action */}
