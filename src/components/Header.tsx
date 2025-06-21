@@ -32,6 +32,7 @@ export default function Header() {
     { href: "/#privacy", label: "Privacy" },
     { href: "/#models", label: "Models" },
     { href: "/roadmap", label: "Roadmap" },
+    { href: "/changelog", label: "Changelog" },
   ];
 
   return (
