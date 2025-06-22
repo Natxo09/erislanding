@@ -36,8 +36,8 @@ interface ChangelogEntry {
 const changelogData: ChangelogEntry[] = [
   {
     version: "1.5.0",
-    date: "Pending App Store Review",
-    status: "pending",
+    date: "2025-06-22",
+    status: "released",
     categories: {
       added: [
         "Device Model Display: Shows specific device model (e.g. 'iPhone 15 Pro') instead of generic 'iPhone'",
@@ -82,8 +82,8 @@ const changelogData: ChangelogEntry[] = [
   },
   {
     version: "1.4.0",
-    date: "Pending App Store Review",
-    status: "pending",
+    date: "2025-06-22",
+    status: "released",
     categories: {
       added: [
         "Dynamic GPU cache limits based on device capabilities",
