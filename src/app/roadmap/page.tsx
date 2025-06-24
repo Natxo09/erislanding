@@ -18,7 +18,12 @@ const roadmapItems = [
       {
         title: "Markdown formatting",
         description: "Improve Markdown formatting for AI responses",
-        status: "planned"
+        status: "completed"
+      },
+      {
+        title: "Model testing across devices",
+        description: "Continue testing all AI models on different devices and platforms for optimal performance",
+        status: "in-progress"
       }
     ]
   },
@@ -26,6 +31,11 @@ const roadmapItems = [
     category: "Upcoming Features",
     icon: Sparkles,
     items: [
+      {
+        title: "Shortcuts integration",
+        description: "Integration with Apple Shortcuts for automation and quick actions",
+        status: "planned"
+      },
       {
         title: "Voice input support",
         description: "Voice input/dictation with OpenAI Whisper or similar",
