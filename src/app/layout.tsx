@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: `%s | ${appData.name} - Private AI Chat`
   },
   description: appData.description,
-  keywords: appData.keywords,
+  keywords: [...appData.keywords],
   authors: [{ name: appData.developer.name, url: appData.developer.url }],
   creator: appData.developer.name,
   publisher: appData.developer.name,
