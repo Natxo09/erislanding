@@ -34,7 +34,12 @@ const roadmapItems = [
       {
         title: "Shortcuts integration",
         description: "Integration with Apple Shortcuts for automation and quick actions",
-        status: "planned"
+        status: "in-progress"
+      },
+      {
+        title: "Native macOS app",
+        description: "Dedicated macOS app (not iPad port)",
+        status: "in-progress"
       },
       {
         title: "Voice input support",
@@ -47,8 +52,8 @@ const roadmapItems = [
         status: "planned"
       },
       {
-        title: "Native macOS app",
-        description: "Dedicated macOS app (not iPad port)",
+        title: "File support",
+        description: "Support for various file types including PDF, documents, and more",
         status: "planned"
       }
     ]
