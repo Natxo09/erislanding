@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { appData } from "@/lib/app-data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,12 +15,15 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://eris.natxo.dev"),
-  title: "Eris - Private AI Chat for iPhone & iPad",
-  description: "Chat with AI privately on your device. No cloud, no tracking. Powered by MLX for Apple Silicon.",
-  keywords: "AI chat, private AI, offline AI, iPhone AI, iPad AI, MLX, local LLM, privacy, on-device AI, Apple Silicon",
-  authors: [{ name: "Ignacio Palacio", url: "https://natxo.dev" }],
-  creator: "Ignacio Palacio",
-  publisher: "Northern Bytes",
+  title: {
+    default: `${appData.name} - ${appData.tagline}`,
+    template: `%s | ${appData.name} - Private AI Chat`
+  },
+  description: appData.description,
+  keywords: appData.keywords,
+  authors: [{ name: appData.developer.name, url: appData.developer.url }],
+  creator: appData.developer.name,
+  publisher: appData.developer.name,
   formatDetection: {
     email: false,
     address: false,
@@ -36,10 +40,10 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   openGraph: {
-    title: "Eris - Private AI Chat",
-    description: "Experience AI chat that respects your privacy. Runs entirely on your iPhone or iPad.",
-    url: "https://eris.natxo.dev",
-    siteName: "Eris",
+    title: appData.name + " - " + appData.tagline,
+    description: appData.description,
+    url: appData.urls.landing,
+    siteName: appData.name,
     locale: "en_US",
     type: "website",
     images: [
@@ -47,14 +51,14 @@ export const metadata: Metadata = {
         url: "/meta.png",
         width: 1200,
         height: 630,
-        alt: "Eris - Private AI Chat",
+        alt: `${appData.name} - Private AI Chat App`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Eris - Private AI Chat",
-    description: "Experience AI chat that respects your privacy. Runs entirely on your iPhone or iPad.",
+    title: appData.name + " - " + appData.tagline,
+    description: appData.description,
     creator: "@natxo09",
     images: ["/meta.png"],
   },
@@ -70,7 +74,10 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://eris.natxo.dev",
+    canonical: appData.urls.landing,
+  },
+  other: {
+    "apple-itunes-app": `app-id=${appData.appStore.id}`,
   },
 };
 
@@ -79,8 +86,100 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Schema.org for Software Application
+  const softwareApplicationSchema = {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "@id": `${appData.urls.landing}/#MobileApplication`,
+    "name": appData.name,
+    "description": appData.description,
+    "url": appData.urls.landing,
+    "applicationCategory": appData.applicationCategory,
+    "applicationSubCategory": appData.applicationSubCategory,
+    "operatingSystem": appData.operatingSystem,
+    "offers": {
+      "@type": "Offer",
+      "price": appData.offers.price,
+      "priceCurrency": appData.offers.priceCurrency,
+      "availability": appData.offers.availability
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": appData.aggregateRating.ratingValue,
+      "reviewCount": appData.aggregateRating.reviewCount
+    },
+    "author": {
+      "@type": appData.developer.type,
+      "name": appData.developer.name,
+      "url": appData.developer.url
+    },
+    "screenshot": [
+      `${appData.urls.landing}/app-screenshot.png`
+    ],
+    "featureList": appData.features.join(", "),
+    "softwareVersion": "1.5.0",
+    "datePublished": "2024-10-01",
+    "dateModified": new Date().toISOString().split('T')[0],
+    "installUrl": appData.appStore.url,
+    "sameAs": appData.socialProfiles
+  };
+
+  // Schema.org for WebSite with SearchAction
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite", 
+    "name": appData.name,
+    "description": appData.tagline,
+    "url": appData.urls.landing,
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": `${appData.urls.landing}/search?q={search_term_string}`
+      },
+      "query-input": "required name=search_term_string"
+    }
+  };
+
+  // Schema.org for Organization
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${appData.developer.url}/#Person`,
+    "name": appData.developer.name,
+    "url": appData.developer.url,
+    "sameAs": appData.socialProfiles,
+    "makesOffer": {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "MobileApplication",
+        "name": appData.name
+      }
+    }
+  };
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(softwareApplicationSchema)
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema)
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema)
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
