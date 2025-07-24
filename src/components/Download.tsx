@@ -78,7 +78,7 @@ export default function Download() {
               </div>
               
               <div className="text-center">
-                <p className="text-2xl font-bold mb-1">12+</p>
+                <p className="text-2xl font-bold mb-1">10+</p>
                 <p className="text-sm text-muted">AI Models</p>
               </div>
               

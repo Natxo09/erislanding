@@ -24,7 +24,7 @@ export const appData = {
   features: [
     "100% on-device processing",
     "No internet required",
-    "12+ AI models",
+    "10+ AI models",
     "Complete privacy",
     "No subscriptions",
     "Open source"
@@ -53,18 +53,23 @@ export const appData = {
     },
     {
       name: "Qwen 2.5", 
-      variants: ["0.5B", "1.5B", "3B", "7B"],
+      variants: ["0.5B", "1.5B", "3B"],
       description: "Efficient multilingual model"
     },
     {
-      name: "Mistral",
-      variants: ["7B"],
-      description: "Powerful open-source model"
+      name: "Qwen 2.5 Coder",
+      variants: ["1.5B"],
+      description: "Specialized for programming tasks"
     },
     {
-      name: "Phi",
-      variants: ["3.5-mini"],
-      description: "Microsoft's compact AI model"
+      name: "DeepSeek R1",
+      variants: ["1.5B"],
+      description: "Advanced reasoning capabilities"
+    },
+    {
+      name: "Phi 3.5 Mini",
+      variants: ["3.8B"],
+      description: "Microsoft's compact powerhouse"
     },
     {
       name: "Gemma",
@@ -160,7 +165,7 @@ export const appData = {
     },
     {
       question: "What AI models are available?",
-      answer: "Eris offers 12+ models including Llama 3.2, Qwen 2.5, Mistral 7B, DeepSeek R1 for reasoning, and CodeLlama for programming. Models range from 0.4GB to 5GB in size."
+      answer: "Eris offers 10+ models including Llama 3.2, Qwen 2.5, DeepSeek R1 for reasoning, and Qwen 2.5 Coder for programming. Models range from 0.4GB to 5GB in size."
     },
     {
       question: "How much storage do I need?",

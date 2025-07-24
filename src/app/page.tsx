@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Models from "@/components/Models";
+import Shortcuts from "@/components/Shortcuts";
 import MacOS from "@/components/MacOS";
 import Privacy from "@/components/Privacy";
 import FAQ from "@/components/FAQ";
@@ -18,6 +19,7 @@ export default function Home() {
         <Hero />
         <Features />
         <Models />
+        <Shortcuts />
         <MacOS />
         <Privacy />
         <FAQ />

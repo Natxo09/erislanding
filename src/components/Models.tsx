@@ -28,15 +28,6 @@ const modelCategories = [
           "1.5B": "https://huggingface.co/mlx-community/Qwen2.5-1.5B-Instruct-4bit",
           "3B": "https://huggingface.co/mlx-community/Qwen2.5-3B-Instruct-4bit"
         }
-      },
-      { 
-        name: "Mistral 7B", 
-        sizes: ["7B"], 
-        description: "Popular open-source model",
-        downloadSizes: { "7B": "4.9 GB" },
-        hfLinks: {
-          "7B": "https://huggingface.co/mlx-community/Mistral-7B-Instruct-v0.3-4bit"
-        }
       }
     ]
   },
@@ -69,21 +60,12 @@ const modelCategories = [
     icon: Code,
     models: [
       { 
-        name: "CodeLlama", 
-        sizes: ["7B"], 
-        description: "Specialized for programming",
-        downloadSizes: { "7B": "5.1 GB" },
+        name: "Qwen 2.5 Coder", 
+        sizes: ["1.5B"], 
+        description: "Specialized for programming tasks",
+        downloadSizes: { "1.5B": "1.2 GB" },
         hfLinks: {
-          "7B": "https://huggingface.co/mlx-community/CodeLlama-7b-Instruct-hf-4bit"
-        }
-      },
-      { 
-        name: "StableCode", 
-        sizes: ["3B"], 
-        description: "Efficient code generation",
-        downloadSizes: { "3B": "2.2 GB" },
-        hfLinks: {
-          "3B": "https://huggingface.co/mlx-community/stable-code-instruct-3b-4bit"
+          "1.5B": "https://huggingface.co/mlx-community/Qwen2.5-Coder-1.5B-Instruct-4bit"
         }
       }
     ]

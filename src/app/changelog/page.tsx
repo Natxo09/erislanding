@@ -35,6 +35,67 @@ interface ChangelogEntry {
 
 const changelogData: ChangelogEntry[] = [
   {
+    version: "1.6.0",
+    date: "2025-07-23",
+    status: "released",
+    categories: {
+      added: [
+        "QuickChatIntent for conversational AI interactions via Siri Shortcuts",
+        "SummarizeTextIntent for text summarization via Siri Shortcuts",
+        "TranslateTextIntent for multi-language translation via Siri Shortcuts",
+        "GenerateTextIntent for creative text generation via Siri Shortcuts",
+        "Siri integration for all shortcuts with voice activation",
+        "Support for different response styles and tones in shortcuts",
+        "Options to save/discard chats in all shortcuts",
+        "Model selection parameter in shortcuts with clear examples",
+        "isPinned property to Thread model for chat organization",
+        "Pin/unpin action in context menu with 3 chat limit",
+        "Visual pin indicator with 45-degree rotation animation",
+        "Haptic feedback and limit alert when exceeding 3 pins",
+        "DocumentationView with comprehensive sections for getting started, privacy, models, chat features, shortcuts, and tips",
+        "Detail views for AI models, chat features, shortcuts, and tips",
+        "Navigation to documentation from Settings",
+        "Specific error types for unsupported model architectures and missing configurations",
+        "Model validation before download attempts",
+        "Detection for 'stablelm' type models which are not supported by MLX",
+        "Explicit keyboard dismissal after sending message",
+        "IntentError enum for proper error handling in shortcuts",
+        "Device requirements and best practices documentation"
+      ],
+      changed: [
+        "Simplify input area layout with cleaner design",
+        "Move model selector to navigation bar as interactive button",
+        "Increase text field and send button sizes for better usability",
+        "Apply subtle gray background colors for both light/dark themes",
+        "Add visual indicators (chevron) to show model selector is clickable",
+        "Remove redundant UI elements for minimalist interface",
+        "Display pinned chats at the top of the list",
+        "Update error messages to be more descriptive and helpful",
+        "Match app's design language with consistent row-based components in documentation",
+        "Change default text type from email to paragraph in GenerateTextIntent",
+        "Improve parameter descriptions with helpful examples in shortcuts",
+        "Optimize performance with shared LLMEvaluator instance"
+      ],
+      fixed: [
+        "CreditsView SafariView (thanks to Pavel Koupa for PR)",
+        "Button content shape on ModelManagementView and SettingsView (thanks to Pavel Koupa for PR)",
+        "Keyboard stays closed when AI finishes responding",
+        "Compilation errors with proper error types and MainActor annotations",
+        "Ambiguous ModelConfiguration references in shortcuts"
+      ],
+      removed: [
+        "Mistral 7B model due to MLX compatibility issues",
+        "CodeLlama 7B model due to MLX compatibility issues",
+        "StableCode 3B model due to MLX compatibility issues"
+      ],
+      performance: [
+        "Add rounded corners to input container background for smoother rendering",
+        "Include smooth spring animations for pin state changes",
+        "Register shortcuts provider in main app for better performance"
+      ]
+    }
+  },
+  {
     version: "1.5.0",
     date: "2025-06-22",
     status: "released",
