@@ -32,9 +32,9 @@ const roadmapItems = [
     icon: Sparkles,
     items: [
       {
-        title: "Shortcuts integration",
-        description: "Integration with Apple Shortcuts for automation and quick actions",
-        status: "in-progress"
+        title: "Shortcuts & Siri integration",
+        description: "Full integration with Apple Shortcuts (Quick Chat, Summarize, Translate, Generate) and Siri voice activation",
+        status: "completed"
       },
       {
         title: "Native macOS app",

@@ -35,6 +35,44 @@ interface ChangelogEntry {
 
 const changelogData: ChangelogEntry[] = [
   {
+    version: "1.6.2",
+    date: "2025-11-26",
+    status: "released",
+    categories: {
+      added: [
+        "Qwen3 0.6B - Ultra-lightweight multilingual model with thinking capabilities",
+        "Qwen3 1.7B - Balanced multilingual model with advanced reasoning",
+        "Phi-4 Mini - Microsoft's powerful compact model with GPT-4 class performance",
+        "Qwen Coder 0.5B - Ultra-lightweight code assistant",
+        "Qwen Coder 3B - Advanced code assistant with strong capabilities"
+      ],
+      changed: [
+        "Updated AI models registry with 2025 MLX-compatible models",
+        "Set Qwen3 0.6B as the new default model",
+        "Reorganized models with Legacy tag for older versions",
+        "Improved model sorting: non-legacy models shown first"
+      ],
+      removed: [
+        "Llama 3.2 3B (kept 1B version)",
+        "Qwen 2.5 3B (replaced by Qwen3 series)",
+        "Phi 3.5 Mini (replaced by Phi-4 Mini)"
+      ]
+    }
+  },
+  {
+    version: "1.6.1",
+    date: "2025-11-20",
+    status: "released",
+    categories: {
+      added: [
+        "iOS 26 beta warning dialog to alert users about potential compatibility issues"
+      ],
+      changed: [
+        "Updated build version number"
+      ]
+    }
+  },
+  {
     version: "1.6.0",
     date: "2025-07-23",
     status: "released",

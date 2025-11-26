@@ -8,25 +8,34 @@ const modelCategories = [
     title: "General Purpose",
     icon: MessageSquare,
     models: [
-      { 
-        name: "Llama 3.2", 
-        sizes: ["1B", "3B"], 
-        description: "Meta's efficient language models",
-        downloadSizes: { "1B": "0.7 GB", "3B": "2.1 GB" },
+      {
+        name: "Qwen3",
+        sizes: ["0.6B", "1.7B"],
+        description: "Latest multilingual with thinking capabilities",
+        downloadSizes: { "0.6B": "0.4 GB", "1.7B": "1.2 GB" },
         hfLinks: {
-          "1B": "https://huggingface.co/mlx-community/Llama-3.2-1B-Instruct-4bit",
-          "3B": "https://huggingface.co/mlx-community/Llama-3.2-3B-Instruct-4bit"
-        }
+          "0.6B": "https://huggingface.co/mlx-community/Qwen3-0.6B-4bit",
+          "1.7B": "https://huggingface.co/mlx-community/Qwen3-1.7B-4bit"
+        },
+        isNew: true
       },
-      { 
-        name: "Qwen 2.5", 
-        sizes: ["0.5B", "1.5B", "3B"], 
-        description: "Multilingual capabilities",
-        downloadSizes: { "0.5B": "0.4 GB", "1.5B": "1.1 GB", "3B": "2.3 GB" },
+      {
+        name: "Phi-4 Mini",
+        sizes: ["3.8B"],
+        description: "Microsoft's powerful compact model",
+        downloadSizes: { "3.8B": "2.2 GB" },
         hfLinks: {
-          "0.5B": "https://huggingface.co/mlx-community/Qwen2.5-0.5B-Instruct-4bit",
-          "1.5B": "https://huggingface.co/mlx-community/Qwen2.5-1.5B-Instruct-4bit",
-          "3B": "https://huggingface.co/mlx-community/Qwen2.5-3B-Instruct-4bit"
+          "3.8B": "https://huggingface.co/mlx-community/Phi-4-mini-instruct-4bit"
+        },
+        isNew: true
+      },
+      {
+        name: "Llama 3.2",
+        sizes: ["1B"],
+        description: "Meta's efficient model for everyday chat",
+        downloadSizes: { "1B": "0.8 GB" },
+        hfLinks: {
+          "1B": "https://huggingface.co/mlx-community/Llama-3.2-1B-Instruct-4bit"
         }
       }
     ]
@@ -35,22 +44,13 @@ const modelCategories = [
     title: "Reasoning",
     icon: Brain,
     models: [
-      { 
-        name: "DeepSeek R1", 
-        sizes: ["1.5B"], 
-        description: "Advanced reasoning in 4bit/8bit",
+      {
+        name: "DeepSeek R1",
+        sizes: ["1.5B"],
+        description: "Advanced chain-of-thought reasoning",
         downloadSizes: { "1.5B": "1.2 GB" },
         hfLinks: {
           "1.5B": "https://huggingface.co/mlx-community/DeepSeek-R1-Distill-Qwen-1.5B-4bit"
-        }
-      },
-      { 
-        name: "Phi 3.5 Mini", 
-        sizes: ["3.8B"], 
-        description: "Microsoft's compact powerhouse",
-        downloadSizes: { "3.8B": "2.8 GB" },
-        hfLinks: {
-          "3.8B": "https://huggingface.co/mlx-community/Phi-3.5-mini-instruct-4bit"
         }
       }
     ]
@@ -59,13 +59,15 @@ const modelCategories = [
     title: "Code Generation",
     icon: Code,
     models: [
-      { 
-        name: "Qwen 2.5 Coder", 
-        sizes: ["1.5B"], 
+      {
+        name: "Qwen Coder",
+        sizes: ["0.5B", "1.5B", "3B"],
         description: "Specialized for programming tasks",
-        downloadSizes: { "1.5B": "1.2 GB" },
+        downloadSizes: { "0.5B": "0.4 GB", "1.5B": "1.0 GB", "3B": "2.0 GB" },
         hfLinks: {
-          "1.5B": "https://huggingface.co/mlx-community/Qwen2.5-Coder-1.5B-Instruct-4bit"
+          "0.5B": "https://huggingface.co/mlx-community/Qwen2.5-Coder-0.5B-Instruct-4bit",
+          "1.5B": "https://huggingface.co/mlx-community/Qwen2.5-Coder-1.5B-Instruct-4bit",
+          "3B": "https://huggingface.co/mlx-community/Qwen2.5-Coder-3B-Instruct-4bit"
         }
       }
     ]
